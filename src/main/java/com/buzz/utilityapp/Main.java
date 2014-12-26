@@ -7,6 +7,7 @@ package com.buzz.utilityapp;
 
 import com.buzz.buzzdata.IBuzzDB;
 import com.buzz.buzzdata.MongoBuzz;
+import java.io.InputStream;
 import java.net.UnknownHostException;
 import java.util.Date;
 import java.util.Random;
@@ -18,7 +19,7 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) throws UnknownHostException
     {
-        int count = 1000;
+        int count = 5;
         Random random = new Random();
         double maxlat = 48.987386;
         double minlat = 18.005611;
@@ -37,7 +38,7 @@ public class Main {
             String content = randomString(30);
             String[] tags_array = new String[]{"Something1","Something2","Something3","Something4","Something5","Something6","Something7"};
             String tags_in = tags_array[random.nextInt(6)]+","+tags_array[random.nextInt(6)];
-            buzzDB.Insert(userid, header, content, lat, lng, String.join(",", tags_in));
+            buzzDB.Insert(userid, header, content, lat, lng, String.join(",", tags_in), new String[]{"/Buzz/Tmp/sample_pic_upload.jpg"});
             buzzDB = null;
         }
        
