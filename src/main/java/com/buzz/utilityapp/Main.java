@@ -28,7 +28,7 @@ public class Main {
         long start = (new Date()).getTime();
         for(int i =0;i<count;i++)
         {
-            IBuzzDB buzzDB = new MongoBuzz("162.219.245.33", 27017, "Buzz", "admin", "qNjneHcKyl");
+            IBuzzDB buzzDB = new MongoBuzz("ds027771.mongolab.com", 27771, "buzz", "developer", "developer");
             String userid = Integer.toString(random.nextInt(10));
             
             double lat = minlat + random.nextDouble()*(maxlat-minlat);
